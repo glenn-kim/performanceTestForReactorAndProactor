@@ -15,7 +15,7 @@ public class EchoHandler implements Handler{
 
     @Override
     public void completed(Integer result, EventHandler.Event event) {
-        if(result <= 0){
+        if(result < 0){
             try {
                 event.getChannel().close();
             } catch (IOException e) {
@@ -24,6 +24,7 @@ public class EchoHandler implements Handler{
             return;
         }
         event.getChannel().write((ByteBuffer) event.getBuffer().duplicate().flip());
+        event.getBuffer().clear();
         event.getChannel().read(event.getBuffer(),event,this);
     }
 

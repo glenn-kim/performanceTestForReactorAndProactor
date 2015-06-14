@@ -42,7 +42,7 @@ public class Worker extends Thread{
                     String header = parseHeader(stream);
                     Handler handler = dispatcher.getHandlerForHeader(header);
                     if(handler != null) {
-                        System.out.printf("%s header received, mapping handler is %s",header ,handler.getName());
+                        System.out.printf("%s header received, mapping handler is %s\n",header ,handler.getName());
                         handler.execute(stream, socket.getOutputStream());
                     }
                 } catch (IOException e) {

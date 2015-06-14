@@ -19,12 +19,13 @@ public class EchoHandler implements Handler{
     public void execute(InputStream in, OutputStream out) {
         byte[] buff = new byte[BUFF_SIZE];
         try {
-            while(in.available()>0){
+            while(in.available()>=0){
                 int size = in.read(buff);
+                if(size<0) break;
+                System.out.printf("reads %dbytes\n",size);
                 out.write(buff,0,size);
             }
             out.flush();
-            System.out.println("flush");
         } catch (IOException e) {
             e.printStackTrace();
         }

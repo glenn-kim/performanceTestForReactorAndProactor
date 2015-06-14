@@ -23,7 +23,7 @@ public class ServerImpl extends Server{
     private ExecutorService executor;
 
     public ServerImpl() {
-        config = ConfigFactory.load().getConfig("java.proactor");
+        config = ConfigFactory.load("Application.conf").getConfig("java.proactor");
         poolSize = config.getInt("pool-size");
         backlog = config.getInt("backlog");
 

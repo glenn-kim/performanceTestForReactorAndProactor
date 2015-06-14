@@ -17,7 +17,7 @@ public class ServerImpl extends Server{
     public Dispatcher dispatcher;
 
     public ServerImpl() {
-        config = ConfigFactory.load().getConfig("java.reactor");
+        config = ConfigFactory.load("Application.conf").getConfig("java.reactor");
         dispatcher = new Dispatcher(config);
     }
 

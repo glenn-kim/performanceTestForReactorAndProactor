@@ -26,7 +26,7 @@ public class Main {
             case "port error":
                 System.out.println("port should be integer.");
             default:
-                System.out.println("Usage : <command> [reactor|proactor] <port number>");
+                System.out.println("Usage : <command> [reactor|proactor] [--port <port number>] [--conf path] ");
                 System.exit(1);
         }
         if(server != null)
