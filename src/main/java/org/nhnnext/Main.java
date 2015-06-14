@@ -21,6 +21,7 @@ public class Main {
                 server = new org.nhnnext.java.reactor.ServerImpl();
                 break;
             case "proactor":
+                server = new org.nhnnext.java.proactor.ServerImpl();
                 break;
             case "port error":
                 System.out.println("port should be integer.");

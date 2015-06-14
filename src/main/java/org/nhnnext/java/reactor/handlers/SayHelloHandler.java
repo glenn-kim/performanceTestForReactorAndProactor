@@ -22,4 +22,8 @@ public class SayHelloHandler implements Handler{
             e.printStackTrace();
         }
     }
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

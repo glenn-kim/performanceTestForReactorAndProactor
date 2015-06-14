@@ -29,4 +29,8 @@ public class EchoHandler implements Handler{
             e.printStackTrace();
         }
     }
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
